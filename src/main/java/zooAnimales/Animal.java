@@ -18,86 +18,80 @@ public class Animal {
 		this.habitat = habitat;
 		this.genero = genero;
 	}
-
 	public Animal() {}
 	
 	public String movimiento() {
 		return "desplazarse";
 	}
-
-    public void setZona(ArrayList<Zona> zona) {
-		this.zona = zona;
-	}
-
 	public ArrayList<Zona> getZona() {
 		return zona;
 	}
-
+	public void setZona(ArrayList<Zona> zona) {
+		this.zona = zona;
+	}
 	public static void setTotalAnimales(int totalAnimales) {
 		Animal.totalAnimales = totalAnimales;
 	}
-
-    public static void setTotalAnimales() {
-		Animal.totalAnimales++;
-	}
-
 	public static int getTotalAnimales() {
 		return totalAnimales;
 	}
-
-    public void setNombre(String nombre) {
-		this.nombre = nombre;
+	public static void setTotalAnimales() {
+		Animal.totalAnimales++;
 	}
-
 	public String getNombre() {
 		return nombre;
 	}
-
-    public void setEdad(int edad) {
-		this.edad = edad;
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
 	}
-
 	public int getEdad() {
 		return edad;
 	}
-
-    public void setHabitat(String habitat) {
-		this.habitat = habitat;
+	public void setEdad(int edad) {
+		this.edad = edad;
 	}
-
 	public String getHabitat() {
 		return habitat;
 	}
-
-    public void setGenero(String genero) {
-		this.genero = genero;
+	public void setHabitat(String habitat) {
+		this.habitat = habitat;
 	}
-
 	public String getGenero() {
 		return genero;
 	}
-
-
-	public void setZona(Zona Zona) {
-		zona.add(Zona);
+	public void setGenero(String genero) {
+		this.genero = genero;
+	}
+	public void setZona(Zona nZona) {
+		zona.add(nZona);
 	}
 	
 	public static String totalPorTipo() {
-		int mamiferos = Mamifero.cantidadMamiferos();
-		int aves = Ave.cantidadAves();
-		int reptiles = Reptil.cantidadReptiles();
-		int peces = Pez.cantidadPeces();
-		int anfibios = Anfibio.cantidadAnfibios();
-		return "Mamiferos: " + mamiferos+ "\nAves: " + aves+ "\nReptiles: " + reptiles+ "\nPeces: " + peces+ "\nAnfibios: " + anfibios;
+		int nMamiferos = Mamifero.cantidadMamiferos();
+		int nAves = Ave.cantidadAves();
+		int nReptiles = Reptil.cantidadReptiles();
+		int nPeces = Pez.cantidadPeces();
+		int nAnfibios = Anfibio.cantidadAnfibios();
+		return "Mamiferos: " + nMamiferos+
+				"\nAves: " + nAves+
+				"\nReptiles: " + nReptiles+
+				"\nPeces: " + nPeces+
+				"\nAnfibios: " + nAnfibios;
 	}
-
 	@Override
 	public String toString() {
 		if(zona.size() == 1) {	
-			return "Mi nombre es "+getNombre()+ ", tengo una edad de "+getEdad()+ ", habito en "+getHabitat()+ " y mi genero es "+getGenero()+ ", la zona en la que me ubico es "+zona.get(0)+ ", en el "+zona.get(0).getZoo();
-		}
-        else {
-			return "Mi nombre es "+getNombre()+ ", tengo una edad de "+getEdad()+ ", habito en "+getHabitat()+ " y mi genero es "+getGenero();
+			return "Mi nombre es "+getNombre()+
+					", tengo una edad de "+getEdad()+
+					", habito en "+getHabitat()+
+					" y mi genero es "+getGenero()+
+					", la zona en la que me ubico es "+zona.get(0)+
+					", en el "+zona.get(0).getZoo();
+		}else {
+			return "Mi nombre es "+getNombre()+
+					", tengo una edad de "+getEdad()+
+					", habito en "+getHabitat()+
+					" y mi genero es "+getGenero();
 		}
 	}
 	

@@ -2,77 +2,68 @@ package zooAnimales;
 
 import java.util.ArrayList;
 
-class Ave extends Animal {
-    private static ArrayList<Ave> listado = new ArrayList<Ave>();
-    public int halcones;
-    public int aguilas;
-    private String colorPlumas;
-
-    public Ave(String nombre, int edad, String habitat, String genero, int colorPlumas) {
-        super(nombre, edad, habitat, genero);
-        this.colorPlumas= colorPlumas;
-        listado.add(this);
-    }
-
-    pulic Ave () {
-        listado.add(this);
-    }
-
-    @Override
-    public String movimiento() {
-		return "volar";
+public class Ave extends Animal{
+	private static ArrayList<Ave> listado = new ArrayList<Ave>();
+	public static int halcones;
+	public static int aguilas;
+	private String colorPlumas;
+	
+	public Ave(String nombre, int edad, String habitat, String genero, String colorPlumas) {
+		super(nombre, edad, habitat, genero);
+		this.colorPlumas = colorPlumas;
+		listado.add(this);
 	}
-
-    public static int cantidadAves() {
-        return Ave.listado.size();
-    }
-
-    public static Ave crearHalcon(String nombre, int edad, String genero) {
+	public Ave() {
+		listado.add(this);
+	}
+	
+	public static int cantidadAves() {
+		return Ave.listado.size();
+	}
+	
+	public static Ave crearHalcon(String nombre, int edad, String genero) {
 		Ave halcon = new Ave(nombre, edad, "montanas", genero, "cafe glorioso");
-		halcones++;
+		Ave.listado.add(halcon);
+		Ave.halcones++;
 		Animal.setTotalAnimales();
-		listado.add(halcon);
 		return halcon;
 	}
-
-    public static Ave crearAguila(String nombre, int edad, String genero) {
+	public static Ave crearAguila(String nombre, int edad, String genero) {
 		Ave aguila = new Ave(nombre, edad, "montanas", genero, "blanco y amarillo");
-		aguilas++;
+		Ave.listado.add(aguila);
+		Ave.aguilas++;
 		Animal.setTotalAnimales();
-		listado.add(aguila);
 		return aguila;
 	}
-
-    public static void setHalcones(int halcones) {
-		Ave.halcones = halcones;
-	}
-
-    public static int getHalcones() {
+	public static int getHalcones() {
 		return halcones;
 	}
-
-    public static void setAguilas(int aguilas) {
-		Ave.aguilas = aguilas;
+	public static void setHalcones(int halcones) {
+		Ave.halcones = halcones;
 	}
-
 	public static int getAguilas() {
 		return aguilas;
 	}
-
-    public void setListado(ArrayList<Ave> listado) {
-		Ave.listado = listado;
+	public static void setAguilas(int aguilas) {
+		Ave.aguilas = aguilas;
 	}
-
+	@Override
+	public String movimiento() {
+		return "volar";
+	}
+	
 	public ArrayList<Ave> getListado() {
 		return Ave.listado;
 	}
-
-	public void setColorPlumas(String colorPlumas) {
-		this.colorPlumas = colorPlumas;
+	public void setListado(ArrayList<Ave> listado) {
+		Ave.listado = listado;
 	}
-    
 	public String getColorPlumas() {
 		return colorPlumas;
 	}
-
+	public void setColorPlumas(String colorPlumas) {
+		this.colorPlumas = colorPlumas;
+	}
+	
+	
 }
